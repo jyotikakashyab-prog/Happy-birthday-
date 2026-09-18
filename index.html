@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Yasin 🌙✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    background:#02030a;
+    color:white;
+    font-family:'Playfair Display',serif;
+}
+
+/* =========================================================
+   UNIVERSE
+========================================================= */
+
+.universe{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 50% 50%,#261541 0%,#0d081b 42%,#02030a 100%);
+}
+
+.nebula{
+    position:absolute;
+    inset:-30%;
+    background:
+      radial-gradient(ellipse at 25% 40%,rgba(133,67,193,.18),transparent 28%),
+      radial-gradient(ellipse at 75% 60%,rgba(57,83,190,.16),transparent 30%),
+      radial-gradient(ellipse at 50% 90%,rgba(190,71,144,.10),transparent 25%);
+    animation:nebulaMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaMove{
+    from{
+        transform:rotate(0deg) scale(1);
+    }
+    to{
+        transform:rotate(8deg) scale(1.15);
+    }
+}
+
+/* =========================================================
+   MOON
+========================================================= */
+
+.moon{
+    position:absolute;
+    right:7%;
+    top:6%;
+    width:125px;
+    height:125px;
+    border-radius:50%;
+
+    background:
+      radial-gradient(circle at 35% 28%,
+      #fff,
+      #e8e5f4 40%,
+      #aaa6bd 72%,
+      #666477);
+
+    box-shadow:
+      0 0 30px rgba(255,255,255,.6),
+      0 0 90px rgba(192,160,255,.35);
+
+    animation:moonGlow 4s ease-in-out infinite alternate;
+}
+
+.moon:before{
+    content:"";
+    position:absolute;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    left:25px;
+    top:34px;
+    background:rgba(80,76,95,.18);
+    box-shadow:
+      38px 30px 0 -5px rgba(80,76,95,.14),
+      50px -12px 0 -9px rgba(80,76,95,.13);
+}
+
+@keyframes moonGlow{
+    to{
+        transform:scale(1.06);
+    }
+}
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.star{
+    position:absolute;
+    border-radius:50%;
+    background:white;
+    box-shadow:0 0 8px white;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:.2;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+
+/* =========================================================
+   SHOOTING STARS
+========================================================= */
+
+.shooting{
+    position:absolute;
+    width:200px;
+    height:2px;
+    background:linear-gradient(90deg,transparent,white);
+    transform:rotate(-35deg);
+    opacity:0;
+    animation:shoot 5s linear infinite;
+}
+
+.shooting:after{
+    content:"";
+    position:absolute;
+    right:0;
+    top:-3px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:white;
+    box-shadow:0 0 18px white;
+}
+
+@keyframes shoot{
+
+    0%{
+        transform:translate(0,0) rotate(-35deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    28%{
+        transform:translate(-520px,350px) rotate(-35deg);
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   SCENES
+========================================================= */
+
+.scene{
+    position:fixed;
+    inset:0;
+    z-index:10;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:scale(.96) translateY(15px);
+
+    transition:
+      opacity .8s ease,
+      transform .8s ease;
+}
+
+.scene.active{
+    opacity:1;
+    pointer-events:auto;
+    transform:scale(1) translateY(0);
+}
+
+/* =========================================================
+   OPENING PARCEL
+========================================================= */
+
+.parcel{
+    position:relative;
+    width:min(400px,88vw);
+    height:280px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+      linear-gradient(135deg,#9a6645,#68432f);
+
+    border:3px solid #c18a5c;
+
+    box-shadow:
+      0 35px 90px rgba(0,0,0,.8),
+      inset 0 0 30px rgba(0,0,0,.3);
+
+    transform:rotate(-1deg);
+}
+
+.parcel:before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+    height:3px;
+    background:#d4a16d;
+}
+
+.parcel:after{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:3px;
+    background:#d4a16d;
+}
+
+.tape{
+    position:absolute;
+    top:-3px;
+    left:50%;
+    transform:translateX(-50%) rotate(1deg);
+    width:100px;
+    height:48px;
+    background:rgba(226,193,134,.85);
+    z-index:3;
+}
+
+.parcel-label{
+    position:relative;
+    z-index:5;
+
+    padding:24px 30px;
+
+    background:#ead5b5;
+    color:#4b3023;
+
+    transform:rotate(-2deg);
+
+    box-shadow:
+      6px 8px 0 rgba(40,20,10,.25);
+}
+
+.parcel-label small{
+    font-family:'Cinzel',serif;
+    letter-spacing:3px;
+    font-size:10px;
+}
+
+.parcel-label h1{
+    font-family:'Great Vibes',cursive;
+    font-size:65px;
+    line-height:1;
+    margin:8px 0;
+}
+
+.parcel-label p{
+    font-family:'Cinzel',serif;
+    letter-spacing:2px;
+    font-size:12px;
+}
+
+/* =========================================================
+   FLOATING PAPER
+========================================================= */
+
+.note{
+    position:relative;
+    width:min(650px,94vw);
+
+    padding:48px 32px 40px;
+
+    color:#3c271d;
+
+    background:
+      linear-gradient(135deg,#f1dfc3,#d8c09b);
+
+    clip-path:polygon(
+      1% 3%,
+      97% 0%,
+      100% 95%,
+      4% 100%,
+      0% 10%
+    );
+
+    box-shadow:
+      15px 20px 60px rgba(0,0,0,.6);
+
+    transform:rotate(-.8deg);
+}
+
+.note:before{
+    content:"";
+    position:absolute;
+    inset:13px;
+
+    border:1px dashed rgba(90,54,32,.35);
+
+    pointer-events:none;
+}
+
+.note h2{
+    position:relative;
+
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(45px,10vw,75px);
+    color:#512e26;
+
+    margin-bottom:12px;
+}
+
+.note .question{
+    position:relative;
+
+    font-family:'Cinzel',serif;
+    font-size:clamp(18px,4vw,27px);
+
+    line-height:1.55;
+
+    max-width:550px;
+
+    margin:15px auto 28px;
+}
+
+.note p{
+    position:relative;
+
+    font-size:16px;
+    line-height:1.85;
+
+    max-width:550px;
+
+    margin:0 auto 22px;
+}
+
+/* =========================================================
+   YES / NO BUTTONS
+========================================================= */
+
+.choice-row{
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    gap:18px;
+
+    margin-top:25px;
+}
+
+.choice{
+    min-width:120px;
+
+    padding:14px 24px;
+
+    border:2px solid #795039;
+
+    background:#eee0c8;
+
+    color:#42291d;
+
+    font-family:'Cinzel',serif;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+      4px 5px 0 rgba(76,45,29,.22);
+}
+
+.choice:hover{
+    transform:
+      translateY(-5px)
+      rotate(-2deg);
+
+    background:#fff1d8;
+}
+
+/* =========================================================
+   HANGING TAG
+========================================================= */
+
+.tag{
+    position:relative;
+
+    width:min(580px,92vw);
+
+    padding:55px 28px 40px;
+
+    text-align:center;
+
+    background:#e4c79f;
+
+    color:#40281d;
+
+    box-shadow:
+      12px 18px 50px rgba(0,0,0,.65);
+
+    transform:rotate(1deg);
+}
+
+.tag:before{
+    content:"";
+
+    position:absolute;
+    top:-35px;
+    left:50%;
+
+    width:2px;
+    height:45px;
+
+    background:#c9b084;
+}
+
+.tag:after{
+    content:"";
+
+    position:absolute;
+    top:-42px;
+    left:calc(50% - 7px);
+
+    width:14px;
+    height:14px;
+
+    border:3px solid #c9b084;
+
+    border-radius:50%;
+}
+
+.tag h2{
+    font-family:'Great Vibes',cursive;
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.tag p{
+    font-size:17px;
+    line-height:1.9;
+}
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope{
+    position:relative;
+
+    width:min(620px,94vw);
+    min-height:330px;
+
+    padding:55px 28px 35px;
+
+    text-align:center;
+
+    background:#704638;
+
+    border:2px solid #bc8667;
+
+    box-shadow:
+      0 30px 80px rgba(0,0,0,.75);
+}
+
+.envelope-flap{
+    position:absolute;
+
+    left:0;
+    right:0;
+    top:0;
+
+    height:100px;
+
+    background:#895747;
+
+    clip-path:polygon(
+      0 0,
+      100% 0,
+      50% 100%
+    );
+}
+
+.seal{
+    position:relative;
+
+    z-index:3;
+
+    width:68px;
+    height:68px;
+
+    margin:10px auto 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#a83f51;
+
+    border:3px solid #d78d96;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.5);
+
+    font-size:28px;
+}
+
+.envelope h2{
+    position:relative;
+    z-index:3;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:55px;
+
+    color:#ffe5ce;
+}
+
+.envelope p{
+    position:relative;
+    z-index:3;
+
+    max-width:520px;
+
+    margin:15px auto 25px;
+
+    line-height:1.8;
+
+    color:#f2dfd0;
+}
+
+/* =========================================================
+   FINAL LETTER-LIKE PAPER — NOT A BOX
+========================================================= */
+
+.final-note{
+    position:relative;
+
+    width:min(720px,94vw);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    padding:50px 30px;
+
+    text-align:center;
+
+    background:
+      linear-gradient(145deg,#f2dfc2,#d5bb91);
+
+    color:#42281d;
+
+    clip-path:polygon(
+      2% 1%,
+      98% 4%,
+      100% 97%,
+      3% 100%,
+      0 5%
+    );
+
+    box-shadow:
+      15px 25px 70px rgba(0,0,0,.7);
+
+    transform:rotate(-.4deg);
+}
+
+.final-note h1{
+    font-family:'Great Vibes',cursive;
+
+    font-size:clamp(70px,16vw,125px);
+
+    color:#532d29;
+
+    line-height:1;
+}
+
+.final-note .birthday{
+    font-family:'Cinzel',serif;
+
+    font-size:clamp(15px,3vw,23px);
+
+    letter-spacing:4px;
+
+    margin:8px 0 25px;
+}
+
+.final-note p{
+    max-width:620px;
+
+    margin:auto;
+
+    font-size:clamp(15px,3vw,19px);
+
+    line-height:1.9;
+}
+
+.final-note strong{
+    color:#8b4057;
+}
+
+.big-button{
+    margin-top:28px;
+
+    padding:16px 30px;
+
+    border:2px solid #6d4432;
+
+    background:#744936;
+
+    color:#ffe7cc;
+
+    font-family:'Cinzel',serif;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    box-shadow:5px 7px 0 rgba(54,30,20,.25);
+
+    transition:.3s;
+}
+
+.big-button:hover{
+    transform:scale(1.06) rotate(-1deg);
+}
+
+/* =========================================================
+   CELEBRATION
+========================================================= */
+
+#celebration{
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    z-index:100;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+#celebration.show{
+    display:block;
+}
+
+.celebration-title{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    z-index:300;
+
+    opacity:0;
+}
+
+.celebration-title.show{
+    animation:titleExplosion 5s ease forwards;
+}
+
+.celebration-title div{
+    font-family:'Great Vibes',cursive;
+
+    font-size:clamp(60px,15vw,150px);
+
+    color:white;
+
+    text-shadow:
+      0 0 20px white,
+      0 0 45px #ff9bdd,
+      0 0 100px #a86aff;
+}
+
+@keyframes titleExplosion{
+
+    0%{
+        opacity:0;
+        transform:scale(.1);
+    }
+
+    20%{
+        opacity:1;
+        transform:scale(1.08);
+    }
+
+    35%{
+        transform:scale(1);
+    }
+
+    78%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1.4);
+    }
+}
+
+/* =========================================================
+   GIANT BALLOONS
+========================================================= */
+
+.balloon{
+    position:absolute;
+
+    bottom:-180px;
+
+    width:110px;
+    height:145px;
+
+    border-radius:
+      50% 50% 46% 46%;
+
+    z-index:150;
+
+    box-shadow:
+      inset -22px -18px 25px rgba(0,0,0,.25),
+      inset 18px 12px 22px rgba(255,255,255,.23),
+      0 0 25px rgba(255,255,255,.15);
+
+    animation:balloonRise 5s ease-out forwards;
+}
+
+.balloon:before{
+    content:"";
+
+    position:absolute;
+
+    bottom:-9px;
+    left:47px;
+
+    width:16px;
+    height:16px;
+
+    background:inherit;
+
+    transform:rotate(45deg);
+}
+
+.balloon:after{
+    content:"";
+
+    position:absolute;
+
+    top:140px;
+    left:54px;
+
+    width:2px;
+    height:200px;
+
+    background:rgba(255,255,255,.55);
+}
+
+@keyframes balloonRise{
+
+    0%{
+        transform:translateY(0) rotate(-10deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    70%{
+        transform:translateY(-70vh) rotate(9deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(-8deg);
+        opacity:1;
+    }
+}
+
+/* =========================================================
+   BALLOON POP
+========================================================= */
+
+.pop-ring{
+    position:absolute;
+
+    width:35px;
+    height:35px;
+
+    border:5px solid white;
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:400;
+
+    animation:ringExpand .7s ease-out forwards;
+}
+
+@keyframes ringExpand{
+
+    from{
+        transform:translate(-50%,-50%) scale(.2);
+        opacity:1;
+    }
+
+    to{
+        transform:translate(-50%,-50%) scale(7);
+        opacity:0;
+    }
+}
+
+.pop-piece{
+    position:absolute;
+
+    width:14px;
+    height:14px;
+
+    border-radius:3px;
+
+    z-index:401;
+
+    animation:popPiece 1.4s ease-out forwards;
+}
+
+@keyframes popPiece{
+
+    from{
+        transform:translate(0,0) rotate(0) scale(1);
+        opacity:1;
+    }
+
+    to{
+        transform:
+          translate(var(--x),var(--y))
+          rotate(var(--r))
+          scale(.1);
+
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti{
+    position:absolute;
+
+    top:-40px;
+
+    width:12px;
+    height:24px;
+
+    z-index:350;
+
+    animation:confettiFall 4.5s linear forwards;
+}
+
+@keyframes confettiFall{
+
+    to{
+        transform:
+          translateY(115vh)
+          rotate(1000deg);
+
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   HEARTS
+========================================================= */
+
+.heart{
+    position:absolute;
+
+    bottom:-60px;
+
+    z-index:360;
+
+    font-size:38px;
+
+    animation:heartFloat 5s linear forwards;
+}
+
+@keyframes heartFloat{
+
+    to{
+        transform:
+          translate(var(--drift),-115vh)
+          rotate(360deg)
+          scale(1.5);
+
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   STAR BURST
+========================================================= */
+
+.starBurst{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:0 0 18px white;
+
+    z-index:330;
+
+    animation:starBurst 1.8s ease-out forwards;
+}
+
+@keyframes starBurst{
+
+    from{
+        transform:translate(-50%,-50%);
+        opacity:1;
+    }
+
+    to{
+        transform:
+          translate(
+            calc(-50% + var(--x)),
+            calc(-50% + var(--y))
+          )
+          scale(.1);
+
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:600px){
+
+    .moon{
+        width:75px;
+        height:75px;
+    }
+
+    .parcel{
+        height:235px;
+    }
+
+    .parcel-label h1{
+        font-size:52px;
+    }
+
+    .note,
+    .tag,
+    .envelope,
+    .final-note{
+        padding:40px 20px 32px;
+    }
+
+    .choice-row{
+        gap:10px;
+    }
+
+    .choice{
+        min-width:100px;
+        padding:12px 15px;
+    }
+
+    .balloon{
+        width:78px;
+        height:105px;
+    }
+
+    .balloon:after{
+        top:100px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =======================================================
+     UNIVERSE
+======================================================= -->
+
+<div class="universe">
+
+    <div class="nebula"></div>
+
+    <div class="moon"></div>
+
+</div>
+
+
+<!-- =======================================================
+     SCENE 1 — CARDBOARD PACKAGE
+======================================================= -->
+
+<section class="scene active" id="scene1">
+
+    <div class="parcel">
+
+        <div class="tape"></div>
+
+        <div class="parcel-label">
+
+            <small>
+                SPECIAL DELIVERY ✦
+            </small>
+
+            <h1>Yasin</h1>
+
+            <p>
+                HANDLE WITH HEART ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SCENE 2 — OPENING NOTE
+======================================================= -->
+
+<section class="scene" id="scene2">
+
+    <div class="note">
+
+        <h2>Something arrived…</h2>
+
+        <p>
+            Not a normal birthday wish.
+
+            <br><br>
+
+            Something made of little pieces:
+            a little universe,
+            a little mystery,
+            a few questions,
+            and a lot of feelings.
+
+            🌙✨
+        </p>
+
+        <button class="big-button"
+                onclick="goTo('scene3')">
+            PULL THE FIRST NOTE
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SCENE 3 — YES / NO QUESTION 1
+======================================================= -->
+
+<section class="scene" id="scene3">
+
+    <div class="note">
+
+        <h2>First Question 🌙</h2>
+
+        <div class="question">
+            Do you think one person can quietly become
+            very important without even realizing it?
+        </div>
+
+        <div class="choice-row">
+
+            <button class="choice"
+                    onclick="branch1('yes')">
+                YES
+            </button>
+
+            <button class="choice"
+                    onclick="branch1('no')">
+                NO
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     YES PATH 1
+======================================================= -->
+
+<section class="scene" id="yes1">
+
+    <div class="tag">
+
+        <h2>Then keep this… 💖</h2>
+
+        <p>
+            Because sometimes importance doesn't arrive
+            with a warning.
+
+            <br><br>
+
+            It quietly grows inside ordinary conversations,
+            ordinary moments,
+            and ordinary smiles…
+
+            <br><br>
+
+            until one day,
+            that person isn't ordinary anymore.
+        </p>
+
+        <button class="big-button"
+                onclick="goTo('scene5')">
+            TURN THE TAG ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     NO PATH 1
+======================================================= -->
+
+<section class="scene" id="no1">
+
+    <div class="tag">
+
+        <h2>Then here's the twist… 🌌</h2>
+
+        <p>
+            Maybe importance isn't something we notice
+            while it's happening.
+
+            <br><br>
+
+            Sometimes we only understand it when
+            a person's name starts carrying feelings
+            that no ordinary name could carry.
+
+            ❤️
+        </p>
+
+        <button class="big-button"
+                onclick="goTo('scene5')">
+            FIND THE NEXT CLUE
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SCENE 5 — SMILE QUESTION
+======================================================= -->
+
+<section class="scene" id="scene5">
+
+    <div class="note">
+
+        <h2>Another Question ✨</h2>
+
+        <div class="question">
+            Do you think a smile can change the feeling
+            of an entire moment?
+        </div>
+
+        <div class="choice-row">
+
+            <button class="choice"
+                    onclick="branch2('yes')">
+                YES 😊
+            </button>
+
+            <button class="choice"
+                    onclick="branch2('no')">
+                NO
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     YES PATH 2
+======================================================= -->
+
+<section class="scene" id="yes2">
+
+    <div class="tag">
+
+        <h2>Exactly… 😊</h2>
+
+        <p>
+            That's why some smiles become memories.
+
+            <br><br>
+
+            A genuine smile can make an ordinary day
+            feel softer.
+
+            <br><br>
+
+            And sometimes,
+            someone else's smile becomes a tiny piece
+            of happiness you didn't know you needed.
+
+            🌷
+        </p>
+
+        <button class="big-button"
+                onclick="goTo('scene8')">
+            KEEP THE SECRET
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     NO PATH 2
+======================================================= -->
+
+<section class="scene" id="no2">
+
+    <div class="tag">
+
+        <h2>Maybe not every time…</h2>
+
+        <p>
+            But there are certain smiles that are different.
+
+            <br><br>
+
+            The kind you remember later.
+            The kind that appears in your thoughts
+            when you least expect it.
+
+            <br><br>
+
+            And that's where the story gets interesting. 🌙
+        </p>
+
+        <button class="big-button"
+                onclick="goTo('scene8')">
+            KEEP GOING
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SCENE 8 — ENVELOPE
+======================================================= -->
+
+<section class="scene" id="scene8">
+
+    <div class="envelope">
+
+        <div class="envelope-flap"></div>
+
+        <div class="seal">
+            🌹
+        </div>
+
+        <h2>One sealed secret…</h2>
+
+        <p>
+            This one isn't about the universe.
+
+            <br><br>
+
+            It's about why this entire little universe
+            was made for you in the first place.
+        </p>
+
+        <button class="big-button"
+                onclick="goTo('scene9')">
+            BREAK THE SEAL ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SCENE 9 — IMPORTANCE QUESTION
+======================================================= -->
+
+<section class="scene" id="scene9">
+
+    <div class="note">
+
+        <h2>One Last Question 🌙</h2>
+
+        <div class="question">
+            Do you think someone's existence can make
+            another person's world feel brighter?
+        </div>
+
+        <div class="choice-row">
+
+            <button class="choice"
+                    onclick="branch3('yes')">
+                YES ✨
+            </button>
+
+            <button class="choice"
+                    onclick="branch3('no')">
+                NO
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     YES PATH 3
+======================================================= -->
+
+<section class="scene" id="yes3">
+
+    <div class="tag">
+
+        <h2>Then remember this… ❤️</h2>
+
+        <p>
+            Your existence doesn't need to be extraordinary
+            every single day to matter.
+
+            <br><br>
+
+            Sometimes simply being there,
+            smiling,
+            talking,
+            dreaming,
+            and being yourself
+            can mean more than you realize.
+
+            <br><br>
+
+            <b>You are important.</b>
+        </p>
+
+        <button class="big-button"
+                onclick="goTo('finalScene')">
+            OPEN THE FINAL PACKAGE
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     NO PATH 3
+======================================================= -->
+
+<section class="scene" id="no3">
+
+    <div class="tag">
+
+        <h2>Then let this change your mind… 🌌</h2>
+
+        <p>
+            A person's importance isn't always visible
+            from their own side.
+
+            <br><br>
+
+            Sometimes you need to look through
+            somebody else's eyes to understand
+            how much your presence can mean.
+
+            <br><br>
+
+            And that's the secret this package
+            was carrying.
+        </p>
+
+        <button class="big-button"
+                onclick="goTo('finalScene')">
+            OPEN THE FINAL PACKAGE
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FINAL NOTE
+======================================================= -->
+
+<section class="scene" id="finalScene">
+
+    <div class="final-note">
+
+        <h1>Yasin</h1>
+
+        <div class="birthday">
+            HAPPY BIRTHDAY ✦
+        </div>
+
+        <p>
+
+            There are millions of lights in the sky,
+            but tonight this little universe has only
+            one name written across it.
+
+            <br><br>
+
+            <strong>Yasin.</strong>
+
+            <br><br>
+
+            Your smile deserves reasons to stay.
+            Your dreams deserve chances to grow.
+            Your happiness deserves to be celebrated.
+
+            <br><br>
+
+            And your existence deserves to be reminded
+            that it matters.
+
+            <br><br>
+
+            Maybe that's what this whole strange,
+            little cardboard universe was trying to say.
+
+            <br><br>
+
+            <strong>
+            You are important.
+            You are cared for.
+            You are loved.
+            </strong>
+
+            <br><br>
+
+            🌙 ✨ 🌷 🌹 🥀 💖 ❤️
+
+            <br><br>
+
+            Happy Birthday, my love.
+
+            <br>
+
+            May this year give you
+            countless reasons to smile.
+
+        </p>
+
+        <button class="big-button"
+                onclick="celebrate()">
+            OPEN THE BIGGEST SURPRISE 🎁
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     CELEBRATION
+======================================================= -->
+
+<div id="celebration">
+
+    <div class="celebration-title"
+         id="celebrationTitle">
+
+        <div>
+            HAPPY BIRTHDAY<br>
+            YASIN! 🎂✨
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   STARS
+========================================================= */
+
+const universe =
+    document.querySelector(".universe");
+
+for(let i=0;i<230;i++){
+
+    const star =
+        document.createElement("div");
+
+    star.className="star";
+
+    const size =
+        1 + Math.random()*3;
+
+    star.style.width=size+"px";
+    star.style.height=size+"px";
+
+    star.style.left=
+        Math.random()*100+"%";
+
+    star.style.top=
+        Math.random()*100+"%";
+
+    star.style.animationDelay=
+        Math.random()*3+"s";
+
+    universe.appendChild(star);
+}
+
+
+/* =========================================================
+   SHOOTING STARS
+========================================================= */
+
+for(let i=0;i<12;i++){
+
+    const s =
+        document.createElement("div");
+
+    s.className="shooting";
+
+    s.style.left=
+        (20+Math.random()*90)+"%";
+
+    s.style.top=
+        Math.random()*80+"%";
+
+    s.style.animationDelay=
+        Math.random()*6+"s";
+
+    universe.appendChild(s);
+}
+
+
+/* =========================================================
+   AUDIO
+========================================================= */
+
+let audioContext;
+
+function initAudio(){
+
+    if(!audioContext){
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+    }
+
+    if(audioContext.state==="suspended"){
+        audioContext.resume();
+    }
+}
+
+
+function sound(
+    frequency,
+    duration,
+    type="sine",
+    volume=.07
+){
+
+    try{
+
+        initAudio();
+
+        const oscillator =
+            audioContext.createOscillator();
+
+        const gain =
+            audioContext.createGain();
+
+        oscillator.type=type;
+
+        oscillator.frequency.setValueAtTime(
+            frequency,
+            audioContext.currentTime
+        );
+
+        gain.gain.setValueAtTime(
+            .0001,
+            audioContext.currentTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            volume,
+            audioContext.currentTime+.02
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            .0001,
+            audioContext.currentTime+duration
+        );
+
+        oscillator.connect(gain);
+        gain.connect(audioContext.destination);
+
+        oscillator.start();
+
+        oscillator.stop(
+            audioContext.currentTime+
+            duration+
+            .03
+        );
+
+    }catch(e){}
+}
+
+
+/* =========================================================
+   CLICK SOUND
+========================================================= */
+
+function clickSound(){
+
+    sound(520,.09,"sine",.06);
+
+    setTimeout(()=>{
+        sound(780,.08,"sine",.04);
+    },55);
+
+}
+
+
+/* =========================================================
+   OPENING SOUND
+========================================================= */
+
+function openSound(){
+
+    sound(250,.13,"triangle",.08);
+
+    setTimeout(()=>{
+        sound(390,.15,"triangle",.07);
+    },100);
+
+    setTimeout(()=>{
+        sound(650,.2,"sine",.06);
+    },220);
+
+}
+
+
+/* =========================================================
+   POP SOUND
+========================================================= */
+
+function popSound(){
+
+    try{
+
+        initAudio();
+
+        const buffer =
+            audioContext.createBuffer(
+                1,
+                audioContext.sampleRate*.16,
+                audioContext.sampleRate
+            );
+
+        const data =
+            buffer.getChannelData(0);
+
+        for(let i=0;i<data.length;i++){
+
+            data[i] =
+                (Math.random()*2-1) *
+                (1-i/data.length);
+
+        }
+
+        const source =
+            audioContext.createBufferSource();
+
+        const gain =
+            audioContext.createGain();
+
+        source.buffer=buffer;
+
+        gain.gain.setValueAtTime(
+            .22,
+            audioContext.currentTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            .0001,
+            audioContext.currentTime+.16
+        );
+
+        source.connect(gain);
+        gain.connect(audioContext.destination);
+
+        source.start();
+
+    }catch(e){}
+
+}
+
+
+/* =========================================================
+   SCREEN NAVIGATION
+========================================================= */
+
+function goTo(id){
+
+    clickSound();
+
+    document
+        .querySelectorAll(".scene")
+        .forEach(scene=>{
+            scene.classList.remove("active");
+        });
+
+    setTimeout(()=>{
+
+        document
+            .getElementById(id)
+            .classList.add("active");
+
+    },350);
+
+}
+
+
+/* =========================================================
+   FIRST YES / NO BRANCH
+========================================================= */
+
+function branch1(answer){
+
+    openSound();
+
+    if(answer==="yes"){
+
+        setTimeout(()=>{
+            goTo("yes1");
+        },350);
+
+    }else{
+
+        setTimeout(()=>{
+            goTo("no1");
+        },350);
+
+    }
+
+}
+
+
+/* =========================================================
+   SECOND YES / NO BRANCH
+========================================================= */
+
+function branch2(answer){
+
+    openSound();
+
+    if(answer==="yes"){
+
+        setTimeout(()=>{
+            goTo("yes2");
+        },350);
+
+    }else{
+
+        setTimeout(()=>{
+            goTo("no2");
+        },350);
+
+    }
+
+}
+
+
+/* =========================================================
+   THIRD YES / NO BRANCH
+========================================================= */
+
+function branch3(answer){
+
+    openSound();
+
+    if(answer==="yes"){
+
+        setTimeout(()=>{
+            goTo("yes3");
+        },350);
+
+    }else{
+
+        setTimeout(()=>{
+            goTo("no3");
+        },350);
+
+    }
+
+}
+
+
+/* =========================================================
+   GIANT BALLOON
+========================================================= */
+
+const balloonColors=[
+
+    "linear-gradient(135deg,#ff70b7,#a24ce0)",
+
+    "linear-gradient(135deg,#716eff,#c557ff)",
+
+    "linear-gradient(135deg,#ff6d91,#ffb66f)",
+
+    "linear-gradient(135deg,#5588ff,#a257ff)",
+
+    "linear-gradient(135deg,#ff91d5,#b56bff)",
+
+    "linear-gradient(135deg,#ffe0ef,#a99cff)"
+
+];
+
+
+function createBalloon(){
+
+    const container =
+        document.getElementById("celebration");
+
+    const balloon =
+        document.createElement("div");
+
+    balloon.className="balloon";
+
+    balloon.style.left=
+        Math.random()*95+"%";
+
+    balloon.style.background=
+        balloonColors[
+            Math.floor(
+                Math.random()*
+                balloonColors.length
+            )
+        ];
+
+    const scale=
+        .75+Math.random()*.7;
+
+    balloon.style.transform=
+        "scale("+scale+")";
+
+    container.appendChild(balloon);
+
+    setTimeout(()=>{
+
+        if(balloon.parentNode){
+
+            popBalloon(balloon);
+
+        }
+
+    },4200+Math.random()*1600);
+
+}
+
+
+/* =========================================================
+   ACTUAL BALLOON BURST
+========================================================= */
+
+function popBalloon(balloon){
+
+    if(!balloon.parentNode)return;
+
+    const rect =
+        balloon.getBoundingClientRect();
+
+    const x =
+        rect.left+
+        rect.width/2;
+
+    const y =
+        rect.top+
+        rect.height/2;
+
+    balloon.remove();
+
+    popSound();
+
+
+    /* Ring */
+
+    const ring =
+        document.createElement("div");
+
+    ring.className="pop-ring";
+
+    ring.style.left=x+"px";
+    ring.style.top=y+"px";
+
+    document
+        .getElementById("celebration")
+        .appendChild(ring);
+
+    setTimeout(()=>{
+        ring.remove();
+    },900);
+
+
+    /* Balloon fragments */
+
+    for(let i=0;i<40;i++){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className="pop-piece";
+
+        piece.style.left=x+"px";
+        piece.style.top=y+"px";
+
+        const angle =
+            Math.random()*Math.PI*2;
+
+        const distance =
+            70+Math.random()*300;
+
+        piece.style.setProperty(
+            "--x",
+            Math.cos(angle)*distance+"px"
+        );
+
+        piece.style.setProperty(
+            "--y",
+            Math.sin(angle)*distance+"px"
+        );
+
+        piece.style.setProperty(
+            "--r",
+            (Math.random()*720-360)+"deg"
+        );
+
+        piece.style.background=
+            balloonColors[
+                Math.floor(
+                    Math.random()*
+                    balloonColors.length
+                )
+            ];
+
+        document
+            .getElementById("celebration")
+            .appendChild(piece);
+
+        setTimeout(()=>{
+            piece.remove();
+        },1600);
+
+    }
+
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function confetti(){
+
+    const container =
+        document.getElementById("celebration");
+
+    for(let i=0;i<320;i++){
+
+        setTimeout(()=>{
+
+            const c =
+                document.createElement("div");
+
+            c.className="confetti";
+
+            c.style.left=
+                Math.random()*100+"%";
+
+            c.style.background=
+                "hsl("+
+                Math.random()*360+
+                ",95%,"+
+                (55+Math.random()*25)+
+                "%)";
+
+            c.style.animationDuration=
+                3+Math.random()*4+"s";
+
+            container.appendChild(c);
+
+            setTimeout(()=>{
+                c.remove();
+            },8000);
+
+        },i*8);
+
+    }
+
+}
+
+
+/* =========================================================
+   HEARTS
+========================================================= */
+
+function hearts(){
+
+    const container =
+        document.getElementById("celebration");
+
+    const symbols=[
+        "❤️",
+        "💖",
+        "💗",
+        "💕",
+        "💓",
+        "🌷",
+        "🌹",
+        "✨"
+    ];
+
+    for(let i=0;i<120;i++){
+
+        setTimeout(()=>{
+
+            const h =
+                document.createElement("div");
+
+            h.className="heart";
+
+            h.innerText=
+                symbols[
+                    Math.floor(
+                        Math.random()*
+                        symbols.length
+                    )
+                ];
+
+            h.style.left=
+                Math.random()*100+"%";
+
+            h.style.setProperty(
+                "--drift",
+                (Math.random()*320-160)+"px"
+            );
+
+            h.style.animationDuration=
+                4+Math.random()*4+"s";
+
+            container.appendChild(h);
+
+            setTimeout(()=>{
+                h.remove();
+            },8500);
+
+        },i*45);
+
+    }
+
+}
+
+
+/* =========================================================
+   STAR EXPLOSION
+========================================================= */
+
+function starExplosion(){
+
+    const container =
+        document.getElementById("celebration");
+
+    for(let i=0;i<280;i++){
+
+        const star =
+            document.createElement("div");
+
+        star.className="starBurst";
+
+        const angle =
+            Math.random()*Math.PI*2;
+
+        const distance =
+            80+Math.random()*900;
+
+        star.style.setProperty(
+            "--x",
+            Math.cos(angle)*distance+"px"
+        );
+
+        star.style.setProperty(
+            "--y",
+            Math.sin(angle)*distance+"px"
+        );
+
+        container.appendChild(star);
+
+        setTimeout(()=>{
+            star.remove();
+        },2100);
+
+    }
+
+}
+
+
+/* =========================================================
+   SHOOTING STAR FINALE
+========================================================= */
+
+function shootingStarFinale(){
+
+    const container =
+        document.getElementById("celebration");
+
+    for(let i=0;i<45;i++){
+
+        setTimeout(()=>{
+
+            const s =
+                document.createElement("div");
+
+            s.className="shooting";
+
+            s.style.left=
+                (20+Math.random()*100)+"%";
+
+            s.style.top=
+                Math.random()*90+"%";
+
+            s.style.opacity="1";
+
+            s.style.animationDuration=
+                1.4+Math.random()*2+"s";
+
+            container.appendChild(s);
+
+            setTimeout(()=>{
+                s.remove();
+            },3500);
+
+        },i*90);
+
+    }
+
+}
+
+
+/* =========================================================
+   CELEBRATION MUSIC-LIKE CHIME
+========================================================= */
+
+function celebrationSound(){
+
+    const notes=[
+        523,
+        659,
+        784,
+        1046,
+        1318,
+        1568
+    ];
+
+    notes.forEach((note,i)=>{
+
+        setTimeout(()=>{
+
+            sound(
+                note,
+                .32,
+                "sine",
+                .09
+            );
+
+        },i*150);
+
+    });
+
+}
+
+
+/* =========================================================
+   MASSIVE CELEBRATION
+========================================================= */
+
+function celebrate(){
+
+    clickSound();
+
+    const celebration =
+        document.getElementById("celebration");
+
+    celebration.classList.add("show");
+
+
+    /* Birthday sound */
+
+    setTimeout(()=>{
+        celebrationSound();
+    },300);
+
+
+    /* Giant birthday words */
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("celebrationTitle")
+            .classList.add("show");
+
+    },500);
+
+
+    /* FIRST BALLOON WAVE */
+
+    for(let i=0;i<40;i++){
+
+        setTimeout(()=>{
+
+            createBalloon();
+
+        },i*90);
+
+    }
+
+
+    /* CONFETTI */
+
+    setTimeout(()=>{
+        confetti();
+    },700);
+
+
+    /* HEARTS */
+
+    setTimeout(()=>{
+        hearts();
+    },900);
+
+
+    /* STAR EXPLOSION */
+
+    setTimeout(()=>{
+        starExplosion();
+    },1100);
+
+
+    /* SHOOTING STARS */
+
+    setTimeout(()=>{
+        shootingStarFinale();
+    },1500);
+
+
+    /* SECOND HUGE BALLOON WAVE */
+
+    setTimeout(()=>{
+
+        for(let i=0;i<40;i++){
+
+            setTimeout(()=>{
+
+                createBalloon();
+
+            },i*75);
+
+        }
+
+    },3500);
+
+
+    /* THIRD WAVE */
+
+    setTimeout(()=>{
+
+        confetti();
+        hearts();
+        starExplosion();
+        shootingStarFinale();
+
+    },6500);
+
+
+    /* FINAL BALLOON STORM */
+
+    setTimeout(()=>{
+
+        for(let i=0;i<55;i++){
+
+            setTimeout(()=>{
+
+                createBalloon();
+
+            },i*65);
+
+        }
+
+    },8000);
+
+}
+
+</script>
+
+</body>
+  </html>
